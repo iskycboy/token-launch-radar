@@ -47,8 +47,8 @@ h1 .dot { color: var(--accent); }
   padding: 5px 14px; font: inherit; font-size: 13px; cursor: pointer;
 }
 .tabs button[aria-selected="true"] { background: var(--accent-dim); color: var(--accent); border-color: var(--accent); }
-table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; font-size: 13px; }
+th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
 th { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .07em; background: var(--panel2); }
 th.sortable { cursor: pointer; }
 th.sortable:hover { color: var(--accent); }
@@ -57,8 +57,8 @@ tbody tr { cursor: pointer; }
 tbody tr:hover { background: var(--panel2); }
 tbody tr.selected { background: var(--accent-dim); }
 .name { font-weight: 700; }
-.slug { color: var(--faint); font-size: 12px; }
-.chip { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; font-size: 11px; color: var(--dim); margin-right: 3px; }
+.slug { color: var(--faint); font-size: 11px; display: block; }
+.chip { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 0 5px; font-size: 10px; color: var(--dim); margin-right: 2px; }
 .chip.watch { color: var(--amber); border-color: var(--amber); }
 .pos { color: var(--accent); }
 .neg { color: var(--red); }

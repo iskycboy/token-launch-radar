@@ -244,17 +244,17 @@
       el('thead', null, el('tr', null,
         sortHead('#', 'rank', true), sortHead('Protocol', 'name'), el('th', { text: 'Category' }),
         el('th', { text: 'Chains' }), sortHead('TVL', 'tvl_usd', true), sortHead('7d', 'change_7d', true),
-        sortHead('Multiple', 'multiple', true), sortHead('Implied value', 'implied_value_usd', true), sortHead('Ready', 'readiness', true))),
+        sortHead('Implied value', 'implied_value_usd', true), sortHead('Ready', 'readiness', true))),
       el('tbody', null, rows.map(function (r) {
         return el('tr', { class: state.selected === r.slug ? 'selected' : '', onclick: function () { state.selected = r.slug; renderTable(); renderDetail(); } },
           el('td', { class: 'num', text: String(r.rank) }),
           el('td', null, el('span', { class: 'name', text: r.name }), ' ', el('span', { class: 'slug', text: r.slug })),
           el('td', { text: r.category || '—' }),
-          el('td', null, r.chains.slice(0, 3).map(function (c) { return el('span', { class: 'chip', text: c }); }),
+          el('td', null, r.chains.slice(0, 2).map(function (c) { return el('span', { class: 'chip', text: c }); }),
+            r.chains.length > 2 ? el('span', { class: 'chip', text: '+' + (r.chains.length - 2) }) : null,
             r.watchlist ? el('span', { class: 'chip watch', text: 'watchlist' }) : null),
           el('td', { class: 'num', text: fmtUsd(r.tvl_usd) }),
           el('td', { class: 'num ' + (r.change_7d > 0 ? 'pos' : r.change_7d < 0 ? 'neg' : ''), text: fmtPct(r.change_7d) }),
-          el('td', { class: 'num', text: r.multiple.toFixed(2) + 'x' }),
           el('td', { class: 'num', text: fmtUsd(r.implied_value_usd) }),
           el('td', { class: 'num' }, el('span', { class: 'ready' }, el('i', { style: 'width:' + r.readiness + '%' })), String(r.readiness)));
       })));
